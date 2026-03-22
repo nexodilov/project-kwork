@@ -13,8 +13,12 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
 
-ALLOWED_HOSTS = ["*"]  # В продакшене стоит указать конкретные домены
-
+ALLOWED_HOSTS = [
+    ".up.railway.app",
+    "railway.app",
+    "localhost",
+]  # В продакшене стоит указать конкретные домены
+CSRF_TRUSTED_ORIGINS = ["https://*.up.railway.app"]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
